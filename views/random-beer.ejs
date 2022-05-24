@@ -1,7 +1,7 @@
 <div class="beer-item">
-<% randomBeer.forEach((beer) => { %>
+<% beer.forEach((beer) => { %>
 <%- include('./partials/beer.ejs', { beer }) %> 
 <% }) %>
-  <div>This pairs good with<%- randomBeer[0].food_pairing %></div>
-  <div>The brewers tips for this beer are: <%- randomBeer[0].brewers_tips %></div>
+  <div>This pairs good with<%- beer[0].food_pairing %></div>
+  <div>The brewers tips for this beer are: <%- beer[0].brewers_tips %></div>
 </div>

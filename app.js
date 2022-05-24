@@ -31,21 +31,21 @@ app.get('/beers', (req, res) => {
 app.get('/random-beer', (req, res) => {
   punkAPI
     .getRandom()
-    .then(randomBeer => {
+    .then(beer => {
       console.log({randomBeer})
-      res.render('random-beer', { randomBeer });
+      res.render('random-beer', { beer });
     })
     .catch(error => console.log(error));
 });
 
 
-app.get('beers/beer/:id', (req, res) => {
-  let beerId = req.params.id
-  console.log(beerID)
+app.get('/beers/:id', (req, res) => {
   punkAPI
     .getBeer(req.params.id)
     .then(beer=>{
-      res.render('beer', {beer})
+      console.log({beer})
+      let beerToPass = beer[0]
+      res.render('random-beer', {beer})
     })
     .catch(error => console.log(error));
 })
